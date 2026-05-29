@@ -1,0 +1,27 @@
+{
+  "title": [
+    "Non-Ordinary Transaction", 
+    "ERP EPICOR" 
+  ],
+  "period": "January 2024 - July 2025",
+  "tools": "ERP EPICOR, System Analysis",
+  "background": "This project focused on analyzing non-ordinary transaction flows in ERP EPICOR to improve business process understanding, documentation, and operational efficiency.",
+  "topImages": [
+    "/projects/images/project1-1.png",
+    "/projects/images/project1-2.png",
+    "/projects/images/project1-3.png"
+  ],
+  "bottomImages": [
+    "/projects/images/project1-4.png",
+    "/projects/images/project1-5.png"
+  ],
+  "contributions": [
+    "Analyzed transaction flow and system behavior in ERP EPICOR.",
+    "Identified process gaps and documented key transaction requirements.",
+    "Created structured notes and visual references to support system understanding."
+  ],
+  "deliverables": [
+    "System Analysis",
+    "Process Documentation"
+  ]
+}
