@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
 const internships = [
@@ -7,7 +7,7 @@ const internships = [
     title: "Digital Product Intern",
     place: "PT Bank Ina Perdana Tbk",
     period: "February 2026 - Present",
-    image: "/internships/images/intern1-1.png",
+    image: "/internships/images/DPI/intern1-1.png",
     file: "/internships/internship-1.json",
     desc: "Supported digital product development through UAT execution, active user analysis, and strategy recommendations to improve feature adoption and user engagement.",
   },
@@ -16,7 +16,7 @@ const internships = [
     title: "Business Analyst Intern",
     place: "Digistar Class Intern, Telkom Indonesia",
     period: "August 2025 - January 2026",
-    image: "/internships/images/intern2-1.png",
+    image: "/internships/images/BAI/intern2-1.png",
     file: "/internships/internship-2.json",
     desc: "Focused on digital product analysis, competitor research, and strategic insight development.",
   },
@@ -25,7 +25,7 @@ const internships = [
     title: "Business and Development Staff",
     place: "Kunci Hukum Indonesia (Remote)",
     period: "May 2025 - August 2025",
-    image: "/internships/images/intern3-1.png",
+    image: "/internships/images/BDS/intern3-1.png",
     file: "/internships/internship-3.json",
     desc: "Contributed to business idea development, strategy support, and competitor analysis in a remote digital work environment.",
   },
@@ -35,26 +35,65 @@ const projects = [
   {
     id: 1,
     title: ["Non-Ordinary Transaction", "ERP EPICOR"],
-    previewImage: "/projects/images/project1-1.png",
+    previewImage: "/projects/images/ERP/1.png",
     file: "/projects/project-1.json",
   },
   {
     id: 2,
     title: ["Online Grocery Store", "Analysis and Design"],
-    previewImage: "/projects/images/project2-1.png",
+    previewImage: "/projects/images/OGS/class diagram.png",
     file: "/projects/project-2.json",
   },
   {
     id: 3,
-    title: ["LGMA Supermarket", "Supplier Management"],
-    previewImage: "/projects/images/project3-1.png",
+    title: ["FromHeart Application", "Admin Management System"],
+    previewImage: "/projects/images/FHA/start.png",
     file: "/projects/project-3.json",
   },
   {
     id: 4,
-    title: "HR Workflow Diagram",
-    previewImage: "/projects/images/project4-1.png",
+    title: ["LMGA Supermarket", "Supplier Management"],
+    previewImage: "/projects/images/LMGA/list of supplier.png",
     file: "/projects/project-4.json",
+  },
+];
+
+const organizations = [
+  {
+    id: 1,
+    title: "HoD Secretary",
+    place: "PUMA Information Systems",
+    period: "2025 - Present",
+    image: "/organizations/images/org1.png",
+    file: "/organizations/organization-1.json",
+    desc: "Managed administrative coordination, meeting schedules, and organizational communication.",
+  },
+  {
+    id: 2,
+    title: "Committee Member",
+    place: "Organization Name",
+    period: "2025",
+    image: "/organizations/images/org2.png",
+    file: "/organizations/organization-2.json",
+    desc: "Supported internal coordination and event execution activities.",
+  },
+  {
+    id: 3,
+    title: "Student Volunteer",
+    place: "Organization Name",
+    period: "2024",
+    image: "/organizations/images/org3.png",
+    file: "/organizations/organization-3.json",
+    desc: "Participated in teamwork-based activities and student engagement.",
+  },
+  {
+    id: 4,
+    title: "Event Staff",
+    place: "Organization Name",
+    period: "2024",
+    image: "/organizations/images/org4.png",
+    file: "/organizations/organization-4.json",
+    desc: "Handled event support and coordination tasks.",
   },
 ];
 
@@ -76,12 +115,6 @@ const courses = [
     title: "Data Science",
     image: "/courses/images/course3/cover.png",
     desc: "Explored data analysis, data visualization, and basic analytical thinking to support decision making.",
-  },
-  {
-    id: 4,
-    title: "Digital Marketing",
-    image: "/courses/images/course4/cover.png",
-    desc: "Learned digital strategy, audience analysis, campaign planning, and online brand communication.",
   },
 ];
 
@@ -141,6 +174,7 @@ function ProjectImageCarousel({ images = [], index, onPrev, onNext }) {
 
 function App() {
   const [selectedInternship, setSelectedInternship] = useState(null);
+  const [selectedOrganization, setSelectedOrganization] = useState(null);
   const [selectedProject, setSelectedProject] = useState(null);
   const [loadingMessage, setLoadingMessage] = useState("");
   const [modalImageIndex, setModalImageIndex] = useState(0);
@@ -148,6 +182,44 @@ function App() {
     top: 0,
     bottom: 0,
   });
+
+  useEffect(() => {
+    if (!selectedInternship?.images?.length) return;
+
+    const interval = setInterval(() => {
+      setModalImageIndex((prev) =>
+        prev === selectedInternship.images.length - 1
+          ? 0
+          : prev + 1
+      );
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [selectedInternship]);
+
+  useEffect(() => {
+    if (!selectedProject) return;
+
+    const interval = setInterval(() => {
+      setProjectImageIndex((prev) => ({
+        top:
+          selectedProject.topImages?.length > 0
+            ? prev.top === selectedProject.topImages.length - 1
+              ? 0
+              : prev.top + 1
+            : 0,
+
+        bottom:
+          selectedProject.bottomImages?.length > 0
+            ? prev.bottom === selectedProject.bottomImages.length - 1
+              ? 0
+              : prev.bottom + 1
+            : 0,
+      }));
+    }, 2500); // 2,5 detik
+
+    return () => clearInterval(interval);
+  }, [selectedProject]);
 
   const handleViewInternship = async (file) => {
     try {
@@ -193,8 +265,32 @@ function App() {
     }
   };
 
+  const handleViewOrganization = async (file) => {
+    try {
+      setLoadingMessage("Loading organization detail...");
+      setSelectedInternship(null);
+      setSelectedProject(null);
+
+      const response = await fetch(file);
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch organization detail");
+      }
+
+      const data = await response.json();
+      setModalImageIndex(0);
+      setSelectedOrganization(data);
+    } catch (error) {
+      console.error(error);
+      alert("Failed to load organization detail.");
+    } finally {
+      setLoadingMessage("");
+    }
+  };
+
   const closeModal = () => {
     setSelectedInternship(null);
+    setSelectedOrganization(null);
     setSelectedProject(null);
   };
 
@@ -251,7 +347,16 @@ function App() {
           <a href="#about">About</a>
           <a href="#internship">Internship</a>
           <a href="#project">Project</a>
+          <a href="#organization">Organization</a>
           <a href="#course">Course</a>
+
+          <a
+            href="https://www.linkedin.com/in/joanessa-ansheilla-sarwoto"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
         </div>
       </nav>
 
@@ -276,9 +381,12 @@ function App() {
       </header>
 
       <section id="about" className="section">
-        <p className="sectionLabel">About Me</p>
+        <p className="sectionLabel">Introduction</p>
+        <h2>About Me</h2>
         <p>
           Enthusiastic about business analysis, business development, and system administration. 
+        </p>
+        <p> 
           Skilled in analysis, workflow design, web development, interactive media, and ERP Epicor, 
           with a strong foundation in system analysis and development.
         </p>
@@ -287,6 +395,11 @@ function App() {
       <section id="internship" className="section">
         <p className="sectionLabel">Experience</p>
         <h2>Internship Experiences</h2>
+        <p className="projectSubtitle">
+          From May 2025 to the present, I have participated in several internship experiences that 
+          strengthened my skills in business analysis, digital product development, strategic thinking, 
+          and cross-functional collaboration.
+        </p>
 
         <div className="internGrid">
           {internships.map((item, index) => (
@@ -342,6 +455,41 @@ function App() {
                 onClick={() => handleViewProject(project.file)}
               >
                 View Project
+              </button>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="organization" className="section">
+        <p className="sectionLabel">Leadership</p>
+        <h2>Organizational Experiences</h2>
+
+        <p className="projectSubtitle">
+          Through organizational experiences, I strengthened my leadership,
+          teamwork, communication, and coordination skills.
+        </p>
+
+        <div className="organizationGrid">
+          {organizations.map((item, index) => (
+            <div className="internCard" key={item.id}>
+              <div className="internImageWrap">
+                <img src={item.image} alt={item.title} className="internImg" />
+                <span className="internNumber">0{index + 1}</span>
+              </div>
+
+              <div className="internContent">
+                <h3>{item.title}</h3>
+                <h4>{item.place}</h4>
+                <p className="internPeriod">{item.period}</p>
+                <p className="internDesc">{item.desc}</p>
+              </div>
+
+              <button
+                className="viewMoreBtn"
+                onClick={() => handleViewOrganization(item.file)}
+              >
+                View More
               </button>
             </div>
           ))}
@@ -476,16 +624,32 @@ function App() {
 
             <div className="projectDetailHero">
               <p className="projectDetailLabel">Project Detail</p>
+
               <h2>
                 <MultiLineTitle title={selectedProject.title} />
               </h2>
+
               <p>Tools: {selectedProject.tools}</p>
+
+              {selectedProject.period && (
+                <p className="projectPeriod">
+                  {selectedProject.period}
+                </p>
+              )}
             </div>
 
             <div className="projectDetailContent">
+              {/* Row 1 */}
               <div className="projectDetailText">
                 <h3>Background</h3>
-                <p>{selectedProject.background}</p>
+
+                {Array.isArray(selectedProject.background) ? (
+                  selectedProject.background.map((item, index) => (
+                    <p key={index}>{item}</p>
+                  ))
+                ) : (
+                  <p>{selectedProject.background}</p>
+                )}
               </div>
 
               <ProjectImageCarousel
@@ -495,6 +659,14 @@ function App() {
                 onNext={() => nextProjectImage("top")}
               />
 
+              {/* Row 2 (full width banner) */}
+              {selectedProject.teamNote && (
+                <div className="projectTeamBanner">
+                  {selectedProject.teamNote}
+                </div>
+              )}
+
+              {/* Row 3 */}
               <ProjectImageCarousel
                 images={selectedProject.bottomImages}
                 index={projectImageIndex.bottom}
@@ -517,13 +689,101 @@ function App() {
 
               <div className="deliverableBtns">
                 {selectedProject.deliverables.map((item, index) => (
-                  <button key={index}>{item}</button>
+                  <a
+                    key={index}
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="deliverableBtn"
+                  >
+                    {item.label}
+                  </a>
                 ))}
               </div>
             </div>
           </div>
         </div>
       )}
+
+      {selectedOrganization && (
+        <div className="modalOverlay">
+          <div className="modalBox">
+            <button className="closeBtn" onClick={closeModal}>
+              ×
+            </button>
+
+            <div className="modalHeader">
+              <div>
+                <p className="sectionLabel">
+                  Organization Detail
+                </p>
+
+                <h2>{selectedOrganization.title}</h2>
+                <h4>{selectedOrganization.place}</h4>
+
+                <p className="modalPeriod">
+                  {selectedOrganization.period}
+                </p>
+              </div>
+            </div>
+
+            <p className="modalIntro">
+              {selectedOrganization.intro}
+            </p>
+
+            <h3>My Jobdesk</h3>
+
+            <ul className="modalList">
+              {selectedOrganization.jobdesk.map(
+                (item, index) => (
+                  <li key={index}>{item}</li>
+                )
+              )}
+            </ul>
+
+            <h3>Documentation</h3>
+
+            <div className="documentationCarousel">
+              <div className="documentationImageWrap">
+                <img
+                  src={
+                    selectedOrganization.images[
+                      modalImageIndex
+                    ]
+                  }
+                  alt="Documentation"
+                  className="documentationMainImage"
+                />
+
+                {selectedOrganization.images.length >
+                  1 && (
+                  <>
+                    <button
+                      className="documentationBtn left"
+                      onClick={prevModalImage}
+                    >
+                      ‹
+                    </button>
+
+                    <button
+                      className="documentationBtn right"
+                      onClick={nextModalImage}
+                    >
+                      ›
+                    </button>
+                  </>
+                )}
+              </div>
+
+              <p className="documentationCounter">
+                {modalImageIndex + 1} /{" "}
+                {selectedOrganization.images.length}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
     </main>
   );
 }

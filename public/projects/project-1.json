@@ -3,25 +3,35 @@
     "Non-Ordinary Transaction", 
     "ERP EPICOR" 
   ],
-  "period": "January 2024 - July 2025",
-  "tools": "ERP EPICOR, System Analysis",
-  "background": "This project focused on analyzing non-ordinary transaction flows in ERP EPICOR to improve business process understanding, documentation, and operational efficiency.",
+  "period": "May 2025 - July 2025",
+  "tools": "Epicor Kinetic",
+  "background": "This project was a part of the hands-on ERP module set up on Epicor ERP, created to simulate customer-specific sales transactions that are non-standard and akin to scenarios in the real world experienced by ERP consultants.",
   "topImages": [
-    "/projects/images/project1-1.png",
-    "/projects/images/project1-2.png",
-    "/projects/images/project1-3.png"
+    "/projects/images/ERP/1.png",
+    "/projects/images/ERP/2.png",
+    "/projects/images/ERP/3.png",
+    "/projects/images/ERP/4.png",
+    "/projects/images/ERP/5.png",
+    "/projects/images/ERP/6.png",
+    "/projects/images/ERP/7.png"
   ],
   "bottomImages": [
-    "/projects/images/project1-4.png",
-    "/projects/images/project1-5.png"
+    "/projects/images/ERP/8.png",
+    "/projects/images/ERP/9.png",
+    "/projects/images/ERP/10.png",
+    "/projects/images/ERP/11.png",
+    "/projects/images/ERP/12.png"
   ],
   "contributions": [
-    "Analyzed transaction flow and system behavior in ERP EPICOR.",
-    "Identified process gaps and documented key transaction requirements.",
-    "Created structured notes and visual references to support system understanding."
+    "Analyzed 3 Advanced Case Studies in Sales Management.",
+    "Simulated 12 Scenarios using Epicor ERP.",
+    "Configured and tested based on several needs.",
+    "Enhanced perception abilities regarding real business processes."
   ],
   "deliverables": [
-    "System Analysis",
-    "Process Documentation"
+    {
+        "label": "View Document",
+        "link": "https://docs.google.com/document/d/1FbeybJvP9AN_sAdZABRA6MEV49v3_cVWGxE3mo1TFBQ/edit?usp=sharing"
+    }
   ]
 }

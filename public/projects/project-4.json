@@ -1,0 +1,42 @@
+{
+  "title": [
+    "LMGA Supermarket:", 
+    "A Supplier Management System" 
+  ],
+  "period": "April 2024 - May 2024",
+  "tools": "Figma",
+  "background": [
+    "This system was created to help LGMA Supermarket manage a list of trusted suppliers and streamline the ordering process.",
+    "Previously, orders were handled manually, which caused inefficiencies and communication delays.",
+    "The system enables staff to view supplier data and contact suppliers directly, improving speed and accuracy in procurement operations."
+  ],
+  "topImages": [
+    "/projects/images/LMGA/list of supplier.png",
+    "/projects/images/LMGA/add supplier.png",
+    "/projects/images/LMGA/list of supplier2.png",
+    "/projects/images/LMGA/supplier A.png",
+    "/projects/images/LMGA/order list.png",
+    "/projects/images/LMGA/invoice and payment.png",
+    "/projects/images/LMGA/notification.png",
+    "/projects/images/LMGA/delivery schedule.png",
+    "/projects/images/LMGA/analytics.png"
+  ],
+
+  "teamNote": "This project was created by four people, including myself.",
+
+  "bottomImages": [
+    "/projects/images/LMGA/prototype.png"
+  ],
+  "contributions": [
+    "Researched workflow of supplier management in supermarket supply chains.",
+    "Designed 40+ key UI screens: supplier list, orders, invoices and payment, notifications, delivery, and analytics.",
+    "Created user flows and wireframes to improve supply chain efficiency.",
+    "Developed a simple and interactive prototype."
+  ],
+  "deliverables": [
+    {
+        "label": "Figma Prototype",
+        "link": "https://www.figma.com/proto/J1BMA4EsMeSwyq1ZDa6qNe/LMGA-Supermarket?node-id=365-4850&p=f&t=IuiivwwtsIzdIbfR-1&scaling=contain&content-scaling=fixed&page-id=365%3A1479&starting-point-node-id=365%3A4850"
+    }
+  ]
+}

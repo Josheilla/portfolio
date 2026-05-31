@@ -1,0 +1,47 @@
+{
+  "title": [
+    "FromHeart Application:", 
+    "Admin Management System" 
+  ],
+  "period": "November 2024 - December 2024",
+  "tools": "Visual Studio Code, Figma, phpMyAdmin",
+  "background": [
+    "FromHeart is an online ordering app designed to provide users with a seamless way to order teas.",
+    "It emphasizes a personalized experience, aiming to simplify the ordering process while maintaining a modern and user-friendly interface.", 
+    "From the admin's point of view, the system allows easy product management, including creating, updating, and deleting menu items to ensure smooth operational control."
+  ],
+  "topImages": [
+    "/projects/images/FHA/start.png",
+    "/projects/images/FHA/login.png",
+    "/projects/images/FHA/home page.png",
+    "/projects/images/FHA/edit profile.png",
+    "/projects/images/FHA/add menu.png",
+    "/projects/images/FHA/menu.png",
+    "/projects/images/FHA/detail.png",
+    "/projects/images/FHA/discount.png",
+    "/projects/images/FHA/discount2.png"
+  ],
+
+  "teamNote": "This project was created by four people, including myself.",
+
+  "bottomImages": [
+    "/projects/images/FHA/code.png"
+  ],
+  "contributions": [
+    "Designed UI screens using Figma.",
+    "Built Sign-Up, Login, Profile pages.",
+    "Structured database in phpMyAdmin.",
+    "Connected UI to database system.",
+    "Planned user account flow logic."
+    ],
+  "deliverables": [
+    {
+        "label": "GitHub Code",
+        "link": "https://github.com/rinchigo/MP-FromHeart"
+    },
+    {
+        "label": "Video Preview",
+        "link": "https://drive.google.com/file/d/1DulJIBiAS0d5WZMDucXd_pQ7Mb0IOHUk/view?usp=sharing"
+    }
+  ]
+}

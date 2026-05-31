@@ -1,0 +1,42 @@
+{
+  "title": [
+    "Online Grocery Shopping:", 
+    "Analysis and Design" 
+  ],
+  "period": "November 2024 - December 2024",
+  "tools": "Rational Rose, Figma",
+  "background": "Various diagrams were used to describe and design the online grocery shopping system as a whole. The diagrams used included use case diagrams, class diagrams, activity diagrams, sequence diagrams, software architecture, data design, interface design, component design, and deployment design.",
+  "topImages": [
+    "/projects/images/OGS/use case diagram.png",
+    "/projects/images/OGS/class diagram.png",
+    "/projects/images/OGS/sequence list products.png",
+    "/projects/images/OGS/sequence customer management.png",
+    "/projects/images/OGS/software architecture.png",
+    "/projects/images/OGS/data design.png"
+  ],
+  "bottomImages": [
+    "/projects/images/OGS/Form Login.png",
+    "/projects/images/OGS/Screen Order.png",
+    "/projects/images/OGS/Screen Product.png",
+    "/projects/images/OGS/Screen Customer.png",
+    "/projects/images/OGS/Screen Inventory.png",
+    "/projects/images/OGS/Screen Delivery.png",
+    "/projects/images/OGS/Form Checkout.png",
+    "/projects/images/OGS/Report.png"
+  ],
+  "contributions": [
+    "Analyze the needs and main components of an online grocery shopping system, such as users, products, orders, and payments.",
+    "Design use case diagrams, class diagrams, activity diagrams, and sequence diagrams using Rational Rose to visualize the flow and structure of the system.",
+    "Design the interface using Figma as a reference for the application display and basis for the system database design."
+  ],
+  "deliverables": [
+    {
+        "label": "Figma Page",
+        "link": "https://www.figma.com/design/YZbF7YNrDZvM4rYzhffDZW/Interface-design?node-id=0-1&t=M6sM1zFHXuaB3dmi-1"
+    },
+    {
+        "label": "View Document",
+        "link": "https://drive.google.com/file/d/15WPrzl_yIoBzwNrvjLlYZ-XLrL1traiU/view?usp=sharing"
+    }
+  ]
+}
