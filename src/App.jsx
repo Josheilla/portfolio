@@ -9,7 +9,7 @@ const internships = [
     period: "February 2026 - Present",
     image: "/internships/images/DPI/intern1-1.png",
     file: "/internships/internship-1.json",
-    desc: "Supported digital product development through UAT execution, active user analysis, and strategy recommendations to improve feature adoption and user engagement.",
+    desc: "Supporting digital product development through UAT execution, active user analysis, and strategy recommendations to improve feature adoption and user engagement.",
   },
   {
     id: 2,
