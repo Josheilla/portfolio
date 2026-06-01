@@ -3,17 +3,23 @@
     "Online Grocery Shopping:", 
     "Analysis and Design" 
   ],
-  "period": "November 2024 - December 2024",
+  "period": "November-December 2024",
   "tools": "Rational Rose, Figma",
-  "background": "Various diagrams were used to describe and design the online grocery shopping system as a whole. The diagrams used included use case diagrams, class diagrams, activity diagrams, sequence diagrams, software architecture, data design, interface design, component design, and deployment design.",
+  "background": "Various diagrams were used to <strong>describe and design the online grocery shopping system as a whole</strong>. The diagrams used included <strong>use case diagrams, class diagrams, activity diagrams, sequence diagrams</strong>, as well as <strong>software architecture, data design, interface design, component design, and deployment design</strong>.",
   "topImages": [
     "/projects/images/OGS/use case diagram.png",
     "/projects/images/OGS/class diagram.png",
+    "/projects/images/OGS/activity diagram.jpg",
     "/projects/images/OGS/sequence list products.png",
     "/projects/images/OGS/sequence customer management.png",
     "/projects/images/OGS/software architecture.png",
-    "/projects/images/OGS/data design.png"
+    "/projects/images/OGS/data design.png",
+    "/projects/images/OGS/component.png",
+    "/projects/images/OGS/deployment.png"
   ],
+
+  "teamNote": "This project was created by four people, including myself.",
+
   "bottomImages": [
     "/projects/images/OGS/Form Login.png",
     "/projects/images/OGS/Screen Order.png",

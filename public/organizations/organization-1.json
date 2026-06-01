@@ -1,17 +1,22 @@
 {
-  "title": "HoD Secretary",
-  "place": "PUMA Information Systems",
-  "period": "2025 - Present",
-  "intro": "Served as the Head of Department Secretary in PUMA Information Systems, supporting administrative coordination, communication, and documentation to ensure organizational activities ran effectively.",
+  "title": "Head of Secretary Division",
+  "place": "PUMA (President University Major Association) Information Systems 2025",
+  "period": "October 2024 - October 2025",
+
+  "intro": "As the <strong>Head of Secretary Division</strong> of <strong>PUMA IS 2025</strong>, I was responsible for leading and supervising a team of two secretarial members.",
+
   "jobdesk": [
-    "Managed meeting schedules and administrative coordination.",
-    "Prepared and organized meeting notes and documentation.",
-    "Supported communication between internal members and external parties.",
-    "Assisted in coordinating organizational activities and events."
+    "Led and supervised a team of 2 secretarial members in completing organizational tasks and improving administrative skills.",
+    "Assisted team members in completing assignments and monitored their progress to ensure task completion.",
+    "Provided guidance in secretarial and administrative work, including document preparation and organizational coordination.",
+    "Created standard letter templates for organizational proposals, reporting, and official correspondence.",
+    "Prepared and presented monthly reports related to division performance and organizational improvements.",
+    "Served as Secretary for the IStrumental 2024 event to support event administration and documentation."
   ],
+
   "images": [
-    "/organizations/images/org1-1.png",
-    "/organizations/images/org1-2.png",
-    "/organizations/images/org1-3.png"
+    "/organizations/images/HOD/grand inauguration 2025.jpg",
+    "/organizations/images/HOD/secre.png",
+    "/organizations/images/HOD/IStrumental.png"
   ]
 }

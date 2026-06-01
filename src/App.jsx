@@ -37,24 +37,36 @@ const projects = [
     title: ["Non-Ordinary Transaction", "ERP EPICOR"],
     previewImage: "/projects/images/ERP/1.png",
     file: "/projects/project-1.json",
+    period: "May-July 2025",
+    desc:
+      "Simulated customer-specific sales transactions using ERP Epicor to analyze non-standard business scenarios.",
   },
   {
     id: 2,
     title: ["Online Grocery Store", "Analysis and Design"],
     previewImage: "/projects/images/OGS/class diagram.png",
     file: "/projects/project-2.json",
+    period: "November-December 2024",
+    desc:
+      "Designed an online grocery shopping system through system analysis, UML diagrams, and software architecture.",
   },
   {
     id: 3,
     title: ["FromHeart Application", "Admin Management System"],
     previewImage: "/projects/images/FHA/start.png",
     file: "/projects/project-3.json",
+    period: "November-December 2024",
+    desc:
+      "Developed an admin management system for online tea ordering with product management features.",
   },
   {
     id: 4,
     title: ["LMGA Supermarket", "Supplier Management"],
     previewImage: "/projects/images/LMGA/list of supplier.png",
     file: "/projects/project-4.json",
+    period: "April-May 2024",
+    desc:
+      "Built a supplier management system to streamline supplier tracking and procurement communication.",
   },
 ];
 
@@ -62,59 +74,77 @@ const organizations = [
   {
     id: 1,
     title: "HoD Secretary",
-    place: "PUMA Information Systems",
-    period: "2025 - Present",
-    image: "/organizations/images/org1.png",
+    place: "PUMA Information Systems 2025",
+    period: "October 2024 - October 2025",
+    image: "/organizations/images/HOD/grand inauguration 2025.jpg",
     file: "/organizations/organization-1.json",
-    desc: "Managed administrative coordination, meeting schedules, and organizational communication.",
+    desc: "Led the Secretary Division of PUMA IS 2025, supporting administration and organizational coordination.",
   },
   {
     id: 2,
-    title: "Committee Member",
-    place: "Organization Name",
-    period: "2025",
-    image: "/organizations/images/org2.png",
+    title: "Event Organizer Member",
+    place: "Golden Code: Hackathon 2025 PUMA Information Systems",
+    period: "14-16 May 2025",
+    image: "/organizations/images/GC/dokum hackathon.JPG",
     file: "/organizations/organization-2.json",
-    desc: "Supported internal coordination and event execution activities.",
+    desc: "Contributed to Golden Code: Hackathon 2025 through event planning, coordination, and presentation support.",
   },
   {
     id: 3,
-    title: "Student Volunteer",
-    place: "Organization Name",
-    period: "2024",
-    image: "/organizations/images/org3.png",
+    title: "Food & Beverage x Fund Raising Member",
+    place: "Company Visit to BCA PUMA IS x PUMA IT",
+    period: "25 April 2024",
+    image: "/organizations/images/BCA/compvis.jpg",
     file: "/organizations/organization-3.json",
-    desc: "Participated in teamwork-based activities and student engagement.",
+    desc: "Contributed to the BCA Company Visit through food & beverage management and fundraising support.",
   },
   {
     id: 4,
-    title: "Event Staff",
-    place: "Organization Name",
-    period: "2024",
-    image: "/organizations/images/org4.png",
+    title: "Secretary",
+    place: "PUMA Information Systems 2024",
+    period: "November 2023 - October 2024",
+    image: "/organizations/images/SEC/dokum TA.jpg",
     file: "/organizations/organization-4.json",
-    desc: "Handled event support and coordination tasks.",
+    desc: "Handled secretarial and administrative tasks for PUMA IS 2024 and multiple student events.",
   },
 ];
 
 const courses = [
   {
     id: 1,
-    title: "Web Development",
-    image: "/courses/images/course1/cover.png",
-    desc: "Learned the fundamentals of website development, layout structure, and responsive interface implementation.",
+    title: "Introduction to Project Management",
+    company: "MySkill",
+    period: "October 2025",
+    images: [
+      "/courses/PM/38.png",
+      "/courses/PM/39.png",
+      "/courses/PM/40.png"
+    ],
+    desc: "Learned <strong>project management fundamentals</strong>, including <strong>project flow, planning, and key influencing factors</strong>, while developing a <strong>project brief case study</strong> to simulate real-world project planning.",
   },
   {
     id: 2,
-    title: "UI/UX Design",
-    image: "/courses/images/course2/cover.png",
-    desc: "Studied user interface design, user flow, wireframing, prototyping, and visual design principles.",
+    title: "Proficient Business Assessment for Product Manager",
+    company: "Pijar Mahir",
+    period: "September 2025",
+     images: [
+      "/courses/BA/35.png",
+      "/courses/BA/36.png",
+      "/courses/BA/37.png"
+    ],
+    desc: "Learned <strong>business potential analysis</strong> and <strong>product feasibility assessment</strong> through practical case studies, including <strong>market sizing</strong>, <strong>problem-solution-market fit</strong>, competitor analysis, and <strong>financial projection</strong> development to support business strategy.",
   },
   {
     id: 3,
-    title: "Data Science",
-    image: "/courses/images/course3/cover.png",
-    desc: "Explored data analysis, data visualization, and basic analytical thinking to support decision making.",
+    title: "Introduction to Business Development",
+    company: "MySkill",
+    period: "June 2025",
+     images: [
+      "/courses/BD/32.png",
+      "/courses/BD/33.png",
+      "/courses/BD/34.png"
+    ],
+    desc: "Learned <strong>business development fundamentals</strong> and <strong>strategic planning</strong>, including branding strategy, <strong>market research</strong>, opportunity identification, and target market analysis through practical mini tasks.",
   },
 ];
 
@@ -182,6 +212,7 @@ function App() {
     top: 0,
     bottom: 0,
   });
+  const [courseImageIndexes, setCourseImageIndexes] = useState({});
 
   useEffect(() => {
     if (!selectedInternship?.images?.length) return;
@@ -220,6 +251,41 @@ function App() {
 
     return () => clearInterval(interval);
   }, [selectedProject]);
+
+  useEffect(() => {
+    if (!selectedOrganization?.images?.length) return;
+
+    const interval = setInterval(() => {
+      setModalImageIndex((prev) =>
+        prev === selectedOrganization.images.length - 1
+          ? 0
+          : prev + 1
+      );
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, [selectedOrganization]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCourseImageIndexes((prev) => {
+        const updated = {};
+
+        courses.forEach((course) => {
+          const total = course.images?.length || 0;
+
+          updated[course.id] =
+            total > 0
+              ? ((prev[course.id] || 0) + 1) % total
+              : 0;
+        });
+
+        return updated;
+      });
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const handleViewInternship = async (file) => {
     try {
@@ -431,7 +497,7 @@ function App() {
         <p className="sectionLabel">Works</p>
         <h2>Projects</h2>
         <p className="projectSubtitle">
-          From January 2024 to July 2025, I was involved in multiple projects
+          From April 2024 to July 2025, I was involved in multiple projects
           that enhanced my skills in system analysis, development, and
           cross-functional collaboration.
         </p>
@@ -444,11 +510,23 @@ function App() {
                   src={project.previewImage}
                   alt={getPlainTitle(project.title)}
                 />
+
+                <span className="projectNumber">
+                  0{project.id}
+                </span>
               </div>
 
               <h3>
                 <MultiLineTitle title={project.title} />
               </h3>
+
+              <p className="projectPeriodCard">
+                {project.period}
+              </p>
+
+              <p className="projectDesc">
+                {project.desc}
+              </p>
 
               <button
                 className="projectBtn"
@@ -500,16 +578,40 @@ function App() {
         <p className="sectionLabel">Learning</p>
         <h2>Course Activities</h2>
 
+        <p className="projectSubtitle">
+          Completed several courses to strengthen my knowledge in project management, business assessment, and business development through practical case studies and hands-on learning.
+        </p>
+
         <div className="courseGrid">
           {courses.map((course, index) => (
             <div className="courseCard" key={course.id}>
               <div className="courseImageWrap">
-                <img src={course.image} alt={course.title} />
+                <img
+                  src={
+                    course.images?.[
+                      courseImageIndexes[course.id] || 0
+                    ]
+                  }
+                  alt={course.title}
+                />
                 <span className="courseNumber">0{index + 1}</span>
               </div>
 
               <h3>{course.title}</h3>
-              <p>{course.desc}</p>
+
+              <h4 className="courseCompany">
+                {course.company}
+              </h4>
+
+              <p className="coursePeriod">
+                {course.period}
+              </p>
+
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: course.desc,
+                }}
+              />
             </div>
           ))}
         </div>
@@ -552,7 +654,7 @@ function App() {
 
             <p className="modalIntro">{selectedInternship.intro}</p>
 
-            <h3>My Jobdesk</h3>
+            <h3>Key Responsibilities</h3>
             <ul className="modalList">
               {selectedInternship.jobdesk.map((item, index) => (
                 <li key={index}>{item}</li>
@@ -593,23 +695,6 @@ function App() {
               <p className="documentationCounter">
                 {modalImageIndex + 1} / {selectedInternship.images.length}
               </p>
-
-              <div className="documentationThumbs">
-                {selectedInternship.images.map((img, index) => (
-                  <button
-                    key={index}
-                    className={
-                      modalImageIndex === index
-                        ? "documentationThumb active"
-                        : "documentationThumb"
-                    }
-                    onClick={() => setModalImageIndex(index)}
-                    type="button"
-                  >
-                    <img src={img} alt={`Thumbnail ${index + 1}`} />
-                  </button>
-                ))}
-              </div>
             </div>
           </div>
         </div>
@@ -641,14 +726,23 @@ function App() {
             <div className="projectDetailContent">
               {/* Row 1 */}
               <div className="projectDetailText">
-                <h3>Background</h3>
+                <h3>Project Overview</h3>
 
                 {Array.isArray(selectedProject.background) ? (
                   selectedProject.background.map((item, index) => (
-                    <p key={index}>{item}</p>
+                    <p
+                      key={index}
+                      dangerouslySetInnerHTML={{
+                        __html: item,
+                      }}
+                    />
                   ))
                 ) : (
-                  <p>{selectedProject.background}</p>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: selectedProject.background,
+                    }}
+                  />
                 )}
               </div>
 
@@ -675,7 +769,7 @@ function App() {
               />
 
               <div className="projectDetailText">
-                <h3>My Contributions</h3>
+                <h3>Key Responsibilities</h3>
                 <ul>
                   {selectedProject.contributions.map((item, index) => (
                     <li key={index}>{item}</li>
@@ -727,16 +821,24 @@ function App() {
               </div>
             </div>
 
-            <p className="modalIntro">
-              {selectedOrganization.intro}
-            </p>
+            <p
+              className="modalIntro"
+              dangerouslySetInnerHTML={{
+                __html: selectedOrganization.intro,
+              }}
+            />
 
-            <h3>My Jobdesk</h3>
+            <h3>Key Responsibilities</h3>
 
             <ul className="modalList">
               {selectedOrganization.jobdesk.map(
                 (item, index) => (
-                  <li key={index}>{item}</li>
+                  <li
+                    key={index}
+                    dangerouslySetInnerHTML={{
+                      __html: item,
+                    }}
+                  />
                 )
               )}
             </ul>

@@ -3,12 +3,12 @@
     "LMGA Supermarket:", 
     "A Supplier Management System" 
   ],
-  "period": "April 2024 - May 2024",
+  "period": "April-May 2024",
   "tools": "Figma",
   "background": [
-    "This system was created to help LGMA Supermarket manage a list of trusted suppliers and streamline the ordering process.",
-    "Previously, orders were handled manually, which caused inefficiencies and communication delays.",
-    "The system enables staff to view supplier data and contact suppliers directly, improving speed and accuracy in procurement operations."
+    "This system was created to help <strong>LMGA Supermarket</strong> manage a list of <strong>trusted suppliers</strong> and <strong>streamline the ordering process</strong>.",
+    "Previously, orders were handled <strong>manually</strong>, which caused <strong>inefficiencies and communication delays</strong>.",
+    "The system enables staff to <strong>view supplier data</strong> and <strong>contact suppliers directly</strong>, improving <strong>speed and accuracy in procurement operations</strong>."
   ],
   "topImages": [
     "/projects/images/LMGA/list of supplier.png",
@@ -21,9 +21,6 @@
     "/projects/images/LMGA/delivery schedule.png",
     "/projects/images/LMGA/analytics.png"
   ],
-
-  "teamNote": "This project was created by four people, including myself.",
-
   "bottomImages": [
     "/projects/images/LMGA/prototype.png"
   ],

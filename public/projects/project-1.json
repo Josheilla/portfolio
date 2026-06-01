@@ -3,9 +3,9 @@
     "Non-Ordinary Transaction", 
     "ERP EPICOR" 
   ],
-  "period": "May 2025 - July 2025",
+  "period": "May-July 2025",
   "tools": "Epicor Kinetic",
-  "background": "This project was a part of the hands-on ERP module set up on Epicor ERP, created to simulate customer-specific sales transactions that are non-standard and akin to scenarios in the real world experienced by ERP consultants.",
+  "background": "This project was a part of the hands-on <strong>ERP module set up on Epicor ERP</strong>, created to simulate <strong>customer-specific sales transactions</strong> that are <strong>non-standard</strong> and akin to <strong>real-world scenarios experienced by ERP consultants</strong>.",
   "topImages": [
     "/projects/images/ERP/1.png",
     "/projects/images/ERP/2.png",

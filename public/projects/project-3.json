@@ -3,12 +3,12 @@
     "FromHeart Application:", 
     "Admin Management System" 
   ],
-  "period": "November 2024 - December 2024",
+  "period": "November-December 2024",
   "tools": "Visual Studio Code, Figma, phpMyAdmin",
   "background": [
-    "FromHeart is an online ordering app designed to provide users with a seamless way to order teas.",
-    "It emphasizes a personalized experience, aiming to simplify the ordering process while maintaining a modern and user-friendly interface.", 
-    "From the admin's point of view, the system allows easy product management, including creating, updating, and deleting menu items to ensure smooth operational control."
+    "FromHeart is an <strong>online ordering app</strong> designed to provide users with a seamless way to <strong>order teas</strong>.",
+    "It emphasizes a <strong>personalized experience</strong>, aiming to simplify the <strong>ordering process</strong> while maintaining a <strong>modern and user-friendly interface</strong>.",
+    "From the admin's point of view, the system allows <strong>easy product management</strong>, including <strong>creating, updating, and deleting menu items</strong> to ensure smooth operational control."
   ],
   "topImages": [
     "/projects/images/FHA/start.png",
