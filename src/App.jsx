@@ -37,7 +37,7 @@ const projects = [
     title: ["Non-Ordinary Transaction", "ERP EPICOR"],
     previewImage: "/projects/images/ERP/1.png",
     file: "/projects/project-1.json",
-    period: "May-July 2025",
+    period: "May 2025 - July 2025",
     desc:
       "Simulated customer-specific sales transactions using ERP Epicor to analyze non-standard business scenarios.",
   },
@@ -46,7 +46,7 @@ const projects = [
     title: ["Online Grocery Store", "Analysis and Design"],
     previewImage: "/projects/images/OGS/class diagram.png",
     file: "/projects/project-2.json",
-    period: "November-December 2024",
+    period: "November 2024 - December 2024",
     desc:
       "Designed an online grocery shopping system through system analysis, UML diagrams, and software architecture.",
   },
@@ -55,7 +55,7 @@ const projects = [
     title: ["FromHeart Application", "Admin Management System"],
     previewImage: "/projects/images/FHA/start.png",
     file: "/projects/project-3.json",
-    period: "November-December 2024",
+    period: "November 2024 - December 2024",
     desc:
       "Developed an admin management system for online tea ordering with product management features.",
   },
@@ -64,7 +64,7 @@ const projects = [
     title: ["LMGA Supermarket", "Supplier Management"],
     previewImage: "/projects/images/LMGA/list of supplier.png",
     file: "/projects/project-4.json",
-    period: "April-May 2024",
+    period: "April 2024 - May 2024",
     desc:
       "Built a supplier management system to streamline supplier tracking and procurement communication.",
   },
