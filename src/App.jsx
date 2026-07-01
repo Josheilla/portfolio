@@ -1,12 +1,27 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
+const awards = [
+  {
+    id: 1,
+    title: "CHEC Awards 2024 Scholarship",
+    subtitle: "2nd Winner",
+    period: "18 June 2026",
+    images: [
+      "/awards/CHEC/foto chec 2024.jpeg",
+      "/awards/CHEC/foto ber3 chec.jpeg",
+      "/awards/CHEC/foto anak is chec.jpeg",
+    ],
+    desc: "Awarded as the 2nd Winner of the CHEC Awards 2024 Scholarship, presented through the collaboration between China Harbour Engineering Company (CHEC) and President University in recognition of academic excellence and outstanding achievement.",
+  },
+];
+
 const internships = [
   {
     id: 1,
     title: "Digital Product Intern",
     place: "PT Bank Ina Perdana Tbk",
-    period: "February 2026 - Present",
+    period: "February 2026 - June 2026",
     image: "/internships/images/DPI/intern1-1.png",
     file: "/internships/internship-1.json",
     desc: "Supporting digital product development through UAT execution, active user analysis, and strategy recommendations to improve feature adoption and user engagement.",
@@ -214,6 +229,29 @@ function App() {
   });
   const [courseImageIndexes, setCourseImageIndexes] = useState({});
 
+  const [awardImageIndexes, setAwardImageIndexes] = useState({});
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAwardImageIndexes((prev) => {
+        const updated = {};
+
+        awards.forEach((award) => {
+          const total = award.images?.length || 0;
+
+          updated[award.id] =
+            total > 0
+              ? ((prev[award.id] || 0) + 1) % total
+              : 0;
+        });
+
+        return updated;
+      });
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, []);
+
   useEffect(() => {
     if (!selectedInternship?.images?.length) return;
 
@@ -411,6 +449,7 @@ function App() {
 
         <div className="navLinks">
           <a href="#about">About</a>
+          <a href="#award">Award</a>
           <a href="#internship">Internship</a>
           <a href="#project">Project</a>
           <a href="#organization">Organization</a>
@@ -456,6 +495,35 @@ function App() {
           Skilled in analysis, workflow design, web development, interactive media, and ERP Epicor, 
           with a strong foundation in system analysis and development.
         </p>
+      </section>
+
+      <section id="award" className="section awardSection">
+        <p className="sectionLabel">Recognition</p>
+        <h2>Award</h2>
+
+        <div className="awardContainer">
+          <div className="awardContent">
+            <h3>{awards[0].title}</h3>
+            <h4>{awards[0].subtitle}</h4>
+
+            <p className="awardPeriod">{awards[0].period}</p>
+
+            <p className="awardDesc">
+              {awards[0].desc}
+            </p>
+          </div>
+
+          <div className="awardCarousel">
+            <img
+              src={awards[0].images[awardImageIndexes[1] || 0]}
+              alt={awards[0].title}
+            />
+
+            <span className="awardCounter">
+              {(awardImageIndexes[1] || 0) + 1} / {awards[0].images.length}
+            </span>
+          </div>
+        </div>
       </section>
 
       <section id="internship" className="section">

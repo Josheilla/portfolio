@@ -1,16 +1,23 @@
 {
   "title": "Digital Product Intern",
   "place": "PT Bank Ina Perdana Tbk",
-  "period": "February 2026 - Present",
+  "period": "February 2026 - June 2026",
   "intro": "Currently working as a Digital Product Intern at PT Bank Ina Perdana Tbk, contributing to digital product improvement through user acceptance testing, user behavior analysis, and strategic recommendations to enhance product engagement and adoption.",
   "jobdesk": [
-    "Performing UAT on 500+ test cases across 7 features to ensure business alignment and pre-release issue detection.",
-    "Conducting active user analysis on Binadigital customers across 5 key features and promotions, benchmarked against 5 competitors, to support data-driven product decisions. ",
-    "Developing 3 active user engagement strategies and recommendations based on customer behavior analysis, including reward and promotional initiatives aimed at increasing user growth and retention."
+    "Perform UAT on 500+ test cases across 7 digital banking features using the Binadigital staging environment.",
+    "Review 50+ banking API test cases against BRDs, Technical API Documents, and transaction specifications.",
+    "Analyze active user behavior across 5 key features and promotional programs to support product improvements.",
+    "Benchmark 5 competitor digital banking platforms by comparing transaction fees, features, benefits, and promotional strategies.",
+    "Develop 3 user engagement strategies based on customer behavior analysis to improve user growth and retention.",
+    "Develop 2 feature and UI/UX improvement recommendations for the Binadigital app based on customer needs.",
+    "Present analytical findings and recommendations to support digital product decision-making."
   ],
   "images": [
+    "/internships/images/DPI/intern1-3.png",
     "/internships/images/DPI/intern1-1.png",
     "/internships/images/DPI/intern1-2.png",
-    "/internships/images/DPI/intern1-3.png"
+    "/internships/images/DPI/intern1-4.png",
+    "/internships/images/DPI/intern1-5.png",
+    "/internships/images/DPI/intern1-6.png"
   ]
 }
