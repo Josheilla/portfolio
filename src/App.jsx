@@ -469,7 +469,7 @@ function App() {
         <div className="heroText">
           <p className="badge">Hello, welcome to my portfolio</p>
           <h1>Joanessa Ansheilla Sarwoto</h1>
-          <h3>Final-year Information Systems Student at President University</h3>
+          <h3>Fresh Graduate Information Systems at President University</h3>
           <p>
             This portfolio showcases my internship experience, project
             activities, and learning journey in digital development.
@@ -481,7 +481,7 @@ function App() {
         </div>
 
         <div className="photoCard">
-          <img src="/profile.png" alt="Profile" />
+          <img src="/pas foto.png" alt="Profile" />
         </div>
       </header>
 
