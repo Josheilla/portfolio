@@ -1,0 +1,46 @@
+{
+  "title": [
+    "Modular Web-Based CRM System",
+    "Sales Module Development"
+  ],
+  "period": "Capstone Defense: 29 July 2026",
+  "tools": "Visual Studio Code, Supabase, GitHub, Figma",
+  "framework": "Node.js, Vite, Express.js",
+  "background": "This capstone project, titled <strong>\"Design and Implementation of a Modular Web-Based CRM System Using API-Driven Architecture,\"</strong> focused on developing a <strong>modular CRM system</strong> to support and streamline core business processes through an <strong>integrated, API-driven system</strong>. I was primarily responsible for the <strong>Sales Module</strong>, covering the end-to-end sales workflow from lead assignment to performance monitoring.",
+  "topImages": [
+    "/thesis/images/login.png",
+    "/thesis/images/dashboard.png",
+    "/thesis/images/dashboard formula.png",
+    "/thesis/images/opportunities.png",
+    "/thesis/images/upcoming visit.png",
+    "/thesis/images/follow up.png",
+    "/thesis/images/performance overview.png",
+    "/thesis/images/next month forecast.png",
+    "/thesis/images/assign lead.png",
+    "/thesis/images/register user.png",
+    "/thesis/images/access.png"
+  ],
+  "teamNote": "Officially defended on 29 July 2026 at President University, marking the completion of my undergraduate Capstone Project in Information Systems.",
+  "bottomImages": [
+    "/thesis/images/defense.jpeg",
+    "/thesis/images/foto sm banner.jpeg",
+    "/thesis/images/foto ber3 sm banner.jpeg",
+    "/thesis/images/foto ber3 sm bunga.jpeg"
+  ],
+  "contributions": [
+    "Developed lead assignment features for Sales Managers, including assigning, reassigning, and returning leads.",
+    "Built opportunity, visit, and follow-up tracking features to help Sales Staff record and monitor their sales activities.",
+    "Recorded deal outcomes such as Won and Lost statuses to support accurate sales progress tracking and reporting.",
+    "Built performance monitoring and next-month forecast for individual Sales Staff and team-wide oversight."
+  ],
+  "deliverables": [
+    {
+      "label": "View User Guide Video",
+      "link": "https://drive.google.com/file/d/1xdCZlCYsyiyL0kB4xwYxSksh1j2ZkjLR/view?usp=sharing"
+    },
+    {
+      "label": "View Code Documentation Video",
+      "link": "https://drive.google.com/file/d/142owQFs28GZYpefMxjHePTo8alYuHUhw/view?usp=sharing"
+    }
+  ]
+}

@@ -12,7 +12,7 @@ const awards = [
       "/awards/CHEC/foto ber3 chec.jpeg",
       "/awards/CHEC/foto anak is chec.jpeg",
     ],
-    desc: "Awarded as the 2nd Winner of the CHEC Awards 2024 Scholarship, presented through the collaboration between China Harbour Engineering Company (CHEC) and President University in recognition of academic excellence and outstanding achievement.",
+    desc: "Awarded as the <strong>2nd Winner</strong> of the <strong>CHEC Awards 2024 Scholarship</strong>, presented through the collaboration between <strong>China Harbour Engineering Company (CHEC)</strong> and <strong>President University</strong> in recognition of <strong>academic excellence and outstanding achievement</strong>.",
   },
 ];
 
@@ -82,6 +82,18 @@ const projects = [
     period: "April 2024 - May 2024",
     desc:
       "Built a supplier management system to streamline supplier tracking and procurement communication.",
+  },
+];
+
+const theses = [
+  {
+    id: 1,
+    title: ["Modular Web-Based CRM System", "Sales Module | API-Driven Architecture"],
+    previewImage: "/thesis/images/dashboard.png",
+    file: "/thesis/thesis-1.json",
+    period: "Capstone Defense: 29 July 2026",
+    desc:
+      "Designed and developed a modular CRM system using API-driven architecture, focusing on the Sales Module — from lead assignment and opportunity tracking to sales performance monitoring.",
   },
 ];
 
@@ -229,29 +241,6 @@ function App() {
   });
   const [courseImageIndexes, setCourseImageIndexes] = useState({});
 
-  const [awardImageIndexes, setAwardImageIndexes] = useState({});
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setAwardImageIndexes((prev) => {
-        const updated = {};
-
-        awards.forEach((award) => {
-          const total = award.images?.length || 0;
-
-          updated[award.id] =
-            total > 0
-              ? ((prev[award.id] || 0) + 1) % total
-              : 0;
-        });
-
-        return updated;
-      });
-    }, 2500);
-
-    return () => clearInterval(interval);
-  }, []);
-
   useEffect(() => {
     if (!selectedInternship?.images?.length) return;
 
@@ -347,6 +336,8 @@ function App() {
     }
   };
 
+  // Reused by BOTH the "Project" section and the "Thesis" section,
+  // since both use the same detail JSON schema and the same modal below.
   const handleViewProject = async (file) => {
     try {
       setLoadingMessage("Loading project detail...");
@@ -451,6 +442,7 @@ function App() {
           <a href="#about">About</a>
           <a href="#award">Award</a>
           <a href="#internship">Internship</a>
+          <a href="#thesis">Thesis</a>
           <a href="#project">Project</a>
           <a href="#organization">Organization</a>
           <a href="#course">Course</a>
@@ -508,20 +500,22 @@ function App() {
 
             <p className="awardPeriod">{awards[0].period}</p>
 
-            <p className="awardDesc">
-              {awards[0].desc}
-            </p>
+            <p
+              className="awardDesc"
+              dangerouslySetInnerHTML={{
+                __html: awards[0].desc,
+              }}
+            />
           </div>
 
-          <div className="awardCarousel">
-            <img
-              src={awards[0].images[awardImageIndexes[1] || 0]}
-              alt={awards[0].title}
-            />
-
-            <span className="awardCounter">
-              {(awardImageIndexes[1] || 0) + 1} / {awards[0].images.length}
-            </span>
+          <div className="awardGallery">
+            {awards[0].images.map((img, index) => (
+              <img
+                key={index}
+                src={img}
+                alt={`${awards[0].title} ${index + 1}`}
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -558,6 +552,45 @@ function App() {
               </button>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section id="thesis" className="section thesisSection">
+        <p className="sectionLabel">Final Project</p>
+        <h2>Thesis</h2>
+        <p className="projectSubtitle">
+          My undergraduate thesis project, covering the research background,
+          methodology, and the final system/deliverables produced.
+        </p>
+
+        <div className="thesisContainer">
+          <div className="thesisImageWrap">
+            <img
+              src={theses[0].previewImage}
+              alt={getPlainTitle(theses[0].title)}
+            />
+          </div>
+
+          <div className="thesisContent">
+            <h3>
+              <MultiLineTitle title={theses[0].title} />
+            </h3>
+
+            <p className="projectPeriodCard">
+              {theses[0].period}
+            </p>
+
+            <p className="projectDesc">
+              {theses[0].desc}
+            </p>
+
+            <button
+              className="projectBtn"
+              onClick={() => handleViewProject(theses[0].file)}
+            >
+              View Project
+            </button>
+          </div>
         </div>
       </section>
 
@@ -705,8 +738,8 @@ function App() {
       )}
 
       {selectedInternship && (
-        <div className="modalOverlay">
-          <div className="modalBox">
+        <div className="modalOverlay" onClick={closeModal}>
+          <div className="modalBox" onClick={(e) => e.stopPropagation()}>
             <button className="closeBtn" onClick={closeModal}>
               ×
             </button>
@@ -768,9 +801,11 @@ function App() {
         </div>
       )}
 
+      {/* This modal now renders detail for BOTH "Project" cards and "Thesis" cards,
+          since handleViewProject() is used by both sections. */}
       {selectedProject && (
-        <div className="modalOverlay">
-          <div className="projectModalBox">
+        <div className="modalOverlay" onClick={closeModal}>
+          <div className="projectModalBox" onClick={(e) => e.stopPropagation()}>
             <button className="closeBtn" onClick={closeModal}>
               ×
             </button>
@@ -783,6 +818,10 @@ function App() {
               </h2>
 
               <p>Tools: {selectedProject.tools}</p>
+
+              {selectedProject.framework && (
+                <p>Framework: {selectedProject.framework}</p>
+              )}
 
               {selectedProject.period && (
                 <p className="projectPeriod">
@@ -868,8 +907,8 @@ function App() {
       )}
 
       {selectedOrganization && (
-        <div className="modalOverlay">
-          <div className="modalBox">
+        <div className="modalOverlay" onClick={closeModal}>
+          <div className="modalBox" onClick={(e) => e.stopPropagation()}>
             <button className="closeBtn" onClick={closeModal}>
               ×
             </button>
